@@ -4,20 +4,23 @@ import { NativeRouter, Route, Routes } from 'react-router-native';
 import Home from './components/home';
 import Login from './components/login';
 import { Provider } from 'react-redux';
-import { store } from './reducers/store';
+import { store, persistor } from './reducers/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 export default function App() {
   return (
     <Provider store={store}>
-      <View style={styles.container}>
-        <StatusBar style="auto" />
-        <NativeRouter>
-          <Routes>
-            <Route exact path="/" element={<Login />} />
-            <Route path="/home" element={<Home />} />
-          </Routes>
-        </NativeRouter>
-      </View>
+      <PersistGate persistor={persistor} loading={null}>
+        <View style={styles.container}>
+          <StatusBar style="auto" />
+          <NativeRouter>
+            <Routes>
+              <Route exact path="/" element={<Login />} />
+              <Route path="/home" element={<Home />} />
+            </Routes>
+          </NativeRouter>
+        </View>
+      </PersistGate>
     </Provider>
   );
 }
