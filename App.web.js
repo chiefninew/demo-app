@@ -7,10 +7,6 @@ import { Provider } from 'react-redux';
 import { store, persistor } from './reducers/store';
 import { PersistGate } from 'redux-persist/integration/react';
 
-if(__DEV__) {
-  import("./ReactotronConfig")
-}
-
 export default function App() {
   return (
     <Provider store={store}>

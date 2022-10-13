@@ -24,7 +24,8 @@
     "redux-thunk": "^2.4.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "reactotron-react-native": "^5.0.3"
   },
   "private": true
 }

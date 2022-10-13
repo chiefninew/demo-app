@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-native';
 import { setUser } from '../reducers/user/actions';
+import logger from './logger';
 import data from '../assets/data.json';
 
 const styles = StyleSheet.create({
@@ -113,6 +114,7 @@ const Home = () => {
         'https://demo-web-api-appsvc.azurewebsites.net/tickets'
       )
       const tickets = await response.json()
+      logger.log('RESPONSE', tickets)
       setLoading(false);
       setTickets(tickets);
     } catch (e) {
