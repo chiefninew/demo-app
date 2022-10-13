@@ -1,6 +1,8 @@
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-native'
+import { useDispatch, useSelector } from 'react-redux';
+import { setUser } from '../reducers/user/actions'
 
 const logo = require('../assets/TICKETSENPAI.png');
 
@@ -66,13 +68,25 @@ const styles = StyleSheet.create({
 
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const user = useSelector(state => state.user);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [enabled, setEnabled] = useState(false);
 
   const onLogin = () => {
+    dispatch(setUser({
+      email: email,
+      name: 'test'
+    }))
     navigate('/home');
   }
+
+  useEffect(() => {
+    if (user.email) {
+      navigate('/home')
+    }
+  }, [user])
 
   useEffect(() => {
     if (email && password) {

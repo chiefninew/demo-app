@@ -1,6 +1,8 @@
 import { View, Text, ImageBackground, StyleSheet, StatusBar, TextInput, TouchableOpacity, FlatList } from 'react-native'
 import React, { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-native';
+import { setUser } from '../reducers/user/actions';
 import data from '../assets/data.json';
 
 const styles = StyleSheet.create({
@@ -94,10 +96,12 @@ const TicketItem = ({ item }) => {
 
 const Home = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [search, setSearch] = useState('');
   const [tickets, setTickets] = useState([]);
   
   const onLogout = () => {
+    dispatch(setUser({}));
     navigate('/')
   };
 
