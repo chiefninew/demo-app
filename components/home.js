@@ -1,4 +1,4 @@
-import { View, Text, ImageBackground, StyleSheet, StatusBar, TextInput, TouchableOpacity, FlatList } from 'react-native'
+import { View, Text, ImageBackground, StyleSheet, StatusBar, TextInput, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-native';
@@ -99,14 +99,30 @@ const Home = () => {
   const dispatch = useDispatch();
   const [search, setSearch] = useState('');
   const [tickets, setTickets] = useState([]);
+  const [loading, setLoading] = useState(false);
   
   const onLogout = () => {
     dispatch(setUser({}));
     navigate('/')
   };
 
+  const  fetchPosts = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(
+        'https://demo-web-api-appsvc.azurewebsites.net/tickets'
+      )
+      const tickets = await response.json()
+      setLoading(false);
+      setTickets(tickets);
+    } catch (e) {
+      setLoading(false);
+      alert('Something went wrong');
+    }
+  }
+
   useEffect(() => {
-    setTickets(data);
+    fetchPosts()
   }, []);
 
   return (
@@ -128,10 +144,22 @@ const Home = () => {
           </TouchableOpacity>
         </View>
       </View>
+      {
+        loading && (
+          <View style={{ alignItems: 'center', paddingTop: 15 }}>
+            <ActivityIndicator size={'small'} color={'#412FB1'} />
+          </View>
+        )
+      }
       <FlatList
         data={tickets}
         renderItem={({ item }) => <TicketItem item={item} />}
         ListHeaderComponent={() => <View style={{ height: 15 }} />}
+        ListEmptyComponent={() => (
+          <View style={{ alignItems: 'center', paddingTop: 15 }}>
+            <Text>No ticket found.</Text>
+          </View>
+        )}
       />
     </View>
   )
