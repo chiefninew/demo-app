@@ -138,6 +138,7 @@ const Home = () => {
             onChangeText={setSearch}
             placeholder='Search Ticket'
             underlineColorAndroid='transparent'
+            onFocus={() => navigate('/home/integration')}
           />
         </View>
         <View style={{ alignSelf: 'center', marginLeft: 15 }}>
