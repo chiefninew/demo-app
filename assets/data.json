@@ -1,0 +1,92 @@
+[
+    {
+        "id": "1",
+        "title": "Ticket Name 1",
+        "photo": "https://static.remove.bg/sample-gallery/graphics/bird-thumbnail.jpg",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "date": "10/10/22",
+        "price": 20000,
+        "availableTicket": 50
+    },
+    {
+        "id": "2",
+        "title": "Ticket Name 2",
+        "photo": "https://static.remove.bg/sample-gallery/graphics/bird-thumbnail.jpg",
+        "description": "Ticket description 2",
+        "date": "10/10/22",
+        "price": 20000,
+        "availableTicket": 50
+    },
+    {
+        "id": "3",
+        "title": "Ticket Name 3",
+        "photo": "https://static.remove.bg/sample-gallery/graphics/bird-thumbnail.jpg",
+        "description": "Ticket description 3",
+        "date": "10/10/22",
+        "price": 20000,
+        "availableTicket": 50
+    },
+    {
+        "id": "4",
+        "title": "Ticket Name 4",
+        "photo": "https://static.remove.bg/sample-gallery/graphics/bird-thumbnail.jpg",
+        "description": "Ticket description 4",
+        "date": "10/10/22",
+        "price": 20000,
+        "availableTicket": 50
+    },
+    {
+        "id": "5",
+        "title": "Ticket Name 5",
+        "photo": "https://static.remove.bg/sample-gallery/graphics/bird-thumbnail.jpg",
+        "description": "Ticket description 5",
+        "date": "10/10/22",
+        "price": 20000,
+        "availableTicket": 50
+    },
+    {
+        "id": "6",
+        "title": "Ticket Name 6",
+        "photo": "https://static.remove.bg/sample-gallery/graphics/bird-thumbnail.jpg",
+        "description": "Ticket description 6",
+        "date": "10/10/22",
+        "price": 20000,
+        "availableTicket": 50
+    },
+    {
+        "id": "7",
+        "title": "Ticket Name 7",
+        "photo": "https://static.remove.bg/sample-gallery/graphics/bird-thumbnail.jpg",
+        "description": "Ticket description 7",
+        "date": "10/10/22",
+        "price": 20000,
+        "availableTicket": 50
+    },
+    {
+        "id": "8",
+        "title": "Ticket Name 8",
+        "photo": "https://static.remove.bg/sample-gallery/graphics/bird-thumbnail.jpg",
+        "description": "Ticket description 8",
+        "date": "10/10/22",
+        "price": 20000,
+        "availableTicket": 50
+    },
+    {
+        "id": "9",
+        "title": "Ticket Name 9",
+        "photo": "https://static.remove.bg/sample-gallery/graphics/bird-thumbnail.jpg",
+        "description": "Ticket description 9",
+        "date": "10/10/22",
+        "price": 20000,
+        "availableTicket": 50
+    },
+    {
+        "id": "10",
+        "title": "Ticket Name 10",
+        "photo": "https://static.remove.bg/sample-gallery/graphics/bird-thumbnail.jpg",
+        "description": "Ticket description 10",
+        "date": "10/10/22",
+        "price": 20000,
+        "availableTicket": 50
+    }
+]
