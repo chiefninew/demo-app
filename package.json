@@ -6,9 +6,94 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "customize": "yarn expo-electron customize",
+    "desktop": "yarn expo-electron start",
+    "mac": "yarn electron-webpack && yarn electron-builder --mac",
+    "win": "yarn electron-webpack && yarn electron-builder --win"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Nino Paul Cervantes",
+    "email": "chiefninew.moonshot@gmail.com"
+  },
+  "build": {
+    "productName": "Ticketing App",
+    "appId": "ticketing.app",
+    "copyright": "© Project Moonshot 2022",
+    "directories": {
+      "output": "dist"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Ticketing App"
+    },
+    "win": {
+      "requestedExecutionLevel": "requireAdministrator",
+      "artifactName": "${productName} Setup ${version} ${arch}.${ext}",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    },
+    "mac": {
+      "identity": null,
+      "compression": "store",
+      "target": [
+        {
+          "target": "dmg"
+        }
+      ]
+    },
+    "linux": {},
+    "extraMetadata": {
+      "main": "main.js"
+    },
+    "files": [
+      {
+        "from": "dist/main/",
+        "to": "./",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "dist/renderer",
+        "to": "./",
+        "filter": [
+          "**/*"
+        ]
+      },
+      "package.json",
+      "**/node_modules/**/*"
+    ]
   },
   "dependencies": {
+    "@expo/electron-adapter": "^0.0.55",
     "@expo/webpack-config": "^0.17.0",
     "@react-native-async-storage/async-storage": "^1.17.10",
     "expo": "~46.0.13",
@@ -25,6 +110,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "electron": "^21.1.1",
+    "electron-builder": "^23.6.0",
     "reactotron-react-native": "^5.0.3"
   },
   "private": true
