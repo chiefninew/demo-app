@@ -43,13 +43,13 @@ const Integration = () => {
     const params = {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
+      body: {
         title,
         photo,
         description,
         price,
         availableTicket,
-      }),
+      },
     };
     try {
       const response = await fetch(
